@@ -1923,18 +1923,18 @@ namespace casacore { //# NAMESPACE CASACORE - BEGIN
 // Parse the header
 
 	// sanitize to avoid segfaults in fitshdr
-	Bool crlfwarned = False;
-	for(uInt i=0; i<strlen(pHeader)-1; i++){
-	    uInt headerchar = pHeader[i];
-	    if( (headerchar==10) || (headerchar==13) ){
-	        if( ! crlfwarned ){
-		    os << LogIO::WARN << "HEADER contains LF and/or CR characters!" << LogIO::POST;
-		    os << LogIO::WARN << "Will try to replace them by spaces ...." << LogIO::POST;
-		    crlfwarned = True;
-		}
-		pHeader[i] = 32;
-	    }
-	}
+//	Bool crlfwarned = False;
+//	for(uInt i=0; i<strlen(pHeader)-1; i++){
+//	    uInt headerchar = pHeader[i];
+//	    if( (headerchar==10) || (headerchar==13) ){
+//	        if( ! crlfwarned ){
+//		    os << LogIO::WARN << "HEADER contains LF and/or CR characters!" << LogIO::POST;
+//		    os << LogIO::WARN << "Will try to replace them by spaces ...." << LogIO::POST;
+//		    crlfwarned = True;
+//		}
+//		pHeader[i] = 32;
+//	    }
+//	}
 
 	int nCards = strlen(pHeader) / 80;
 	int nReject;
